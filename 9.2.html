@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Registration Page</title>
+
+<link href="reg.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="reg.js"></script>
+
+<script>
+  function ug(){
+    document.formReg.training.innerHTML="<option value=btech>B.Tech</option><option value=bsc>BSc</option><option value=bsc>BA</option>";
+  }
+  function pg(){
+     document.formReg.training.innerHTML="<option value=mtech>M.Tech</option><option value=mba>MBA</option><option value=mca>MCA</option><option value=msc>MSc</option><option value=ma>MA</option>";
+  }
+</script>
+
+
+</head>
+
+
+<body onload="formatPage()">
+
+
+<form name= "formReg" method="post"> 
+<table>
+
+ 
+ <tr>
+  <td colspan="3"><span id="mem"></span></td>
+ </tr>
+ 
+ <tr>
+  <td>Name</td>
+  <td><input type="text" id="un" name="firstname" onkeyup="checkName()"/><span>*</span></td>  
+  <td><span id="ne"></span></td>  
+ </tr>
+  <tr>
+  <td>Date Of Birth</td>
+  <td><input type="date" name="dob"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+  <tr>
+  <td>Mobile</td>
+  <td><input type="number" name="mobile"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+  <td>Email</td>
+  <td><input type="email" id="eml" name="email"/><span>*</span></td>  
+  <td><span></span></td>  
+ </tr>
+ 
+<tr>
+  <td>Graduation Level</td>
+  <td><input type="radio" value="UG" name="grad" onchange="ug()"/>UG
+  <input type="radio" value="PG" name="grad" onchange="pg()"/>PG</td>  
+  <td><span></span></td>  
+ </tr>
+ 
+ <tr>
+<td style="text-align: center;"><b>Highest Qualification</b><font color="red">*</font></td>
+<td>
+  <select name="training">
+    <option value="default"> Specify Highest Qualification</option>
+</select>
+</td>
+</tr>
+ <tr>
+  <td ><input type="submit" value="Submit" /></td>
+   <td><input type="button" value="Preview" onclick="validateform();"/></td>
+ </tr>
+
+</script>
+</table>
+</form>
+</body>
+</html>

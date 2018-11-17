@@ -1,0 +1,53 @@
+<html>
+<head>
+<title> window example </title>
+</head>
+<script>
+function nwindow()
+{
+ var widd= document.frm.width.value;
+ var heightt= document.frm.height.value;
+    var leftt= document.frm.left.value;
+     var topp= document.frm.top.value;
+    var myWindow=window.open("","New Window","width="+widd+",height="+heightt+",top="+topp+",left="+leftt);
+       myWindow.document.write("This window is open on clicking the New Window button");
+
+/*TODO: get the height, width, left and top from the form object and pass the values to open method of window along with the name of the html file to be opened in the new window.*/
+}
+</script>
+<body >
+<form id="frmlab" name="frm">
+<table border="1" cellspacing="8" cellpadding="10" bordercolor="blue"
+<tr>
+    <th colspan="4" align="center"><h2><b>Create a New Window</b></h2> </th>
+</tr>
+<tr>
+    <th colspan="4" align="center"><h2>Window Size</h2> </th>
+</tr>
+<tr>
+    <td> Windth:</td>
+    <td> <input type="number" name="width" id="wid">
+    </td>
+     <td> Height:</td>
+    <td> <input type="number" name="height" id="hig">
+    </td>
+</tr>
+<tr>
+    <th colspan="4" align="center"><h2>Position</h2> </th>
+</tr>
+<tr>
+    <td>Left:</td>
+    <td><input type="number" name="left" id="lef"</td>
+    <td>Top:</td>
+    <td><input type="number" name="top" id="tp"</td>
+</tr>
+<tr>
+    <td colspan="3"><button type="button" onclick="nwindow()"</td>New Window
+    <td colspan="1"><button type="button" onclick="this.form.reset()"</td>Reset
+</tr>
+
+
+</table>
+</form>
+</body>
+</html>

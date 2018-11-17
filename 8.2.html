@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Product Details</title>
+
+<script>
+     function form(){
+       if(document.getElementById("abc").value==1){
+       document.formReg.product.innerHTML="<option value=television>Television</option><option value=laptop>Laptop</option><option value=phone>Phone</option>";
+     }else if (document.getElementById("abc").value==2){
+       document.formReg.product.innerHTML="<option value=soap>Soap</option><option value=powder>Powder</option>";
+     }
+    }
+    function total(){
+      var qty = document.formReg.qty.value;
+
+      if(qty==""){
+        alert("Please enter Quantity")
+      }
+      else{
+        if(document.formReg.product.value== 'television')
+          document.formReg.price.value = qty * 20000;
+
+        if(document.formReg.product.value== 'laptop')
+          document.formReg.price.value = qty * 30000;
+
+        if(document.formReg.product.value== 'phone')
+          document.formReg.price.value = qty * 10000;
+
+        if(document.formReg.product.value== 'soap')
+          document.formReg.price.value = qty * 40;
+
+        if(document.formReg.product.value== 'powder')
+          document.formReg.price.value = qty * 90;
+      }
+    }
+    
+      
+</script>
+
+</head>
+
+<body style="background-color:aqua;">
+
+
+<form name="formReg" onchange="form()"> 
+
+<table style="border-color: white;border-style:solid; border-width:thick">
+<h3> Product Details</h3>
+<tr>
+<td><b>Category</b><font color="red">*</font></td>
+<td>
+    <select name="category" id="abc">
+      <option value="default"> Specify Category</option>
+      <option value="1">Electronics</option>
+      <option value="2">Grocery</option>
+    </select>
+</td>
+</tr>
+<tr>
+<td>Product</td>
+<td>
+  <select name="product">
+    <option value="default"> Specify Product</option>
+  </select>
+</td>
+</tr>
+ <tr>
+  <td>Quantity</td>
+  <td><input type="number" name="qty" onchange="total()"></td>  
+ </tr>
+  <tr>
+  <td>Total Price</td>
+  <td><input type="number" name="price"></td>   
+ </tr>
+
+ <tr>
+  <td ><button onclick="nwindow()" value="Submit">Submit</button></td>
+   <td><button type="reset" value="Reset">Reset</button></td>
+ </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title> Working with Documents </title>
+
+    <script>
+        function placeOrder() {
+
+            var barbie = document.getElementById("1").value;
+
+            var calculator = document.getElementById("2").value;
+
+            var mobilePhone = document.getElementById("3").value;
+
+            var lgDvd = document.getElementById("4").value;
+
+            if (barbie == "" && calculator == "" && mobilePhone == "" && lgDvd == "") {
+                alert("no item selected");
+
+
+            } else {
+
+                alert("Successful");
+                var htmlString = "<html><body>";
+                htmlString += "<h1 align='center'>INVOICE</h1>";
+                htmlString +=
+                    "<table border='1' align='center'><tr> <th>PRODUCT</th><th>QUANTITY</th> <th>PRICE</th><th>TOTAL</th> </tr>"
+                if (barbie >= 0)
+                    htmlString += "<tr><td>Barbie Doll</td><td>Beautiful</td> <td>20</td><td>" + (barbie * 20) +
+                    "</td></tr>"
+                if (calculator >= 0)
+                    htmlString +=
+                    "<tr><td>Calculator</td><td>Calculator with latest features</td> <td>30</td><td>" + (calculator *
+                        30) +
+                    " </td></tr>"
+                if (mobilePhone >= 0)
+                    htmlString +=
+                    "<tr><td>Mobile Phone</td><td>Camera, Java, Games, GPRS</td> <td>40</td><td>" + (mobilePhone * 40) +
+                    " </td></tr>"
+                if (lgDvd >= 0)
+                    htmlString += "<tr><td>LG DVD</td><td>5 disc changer</td> <td>50</td><td>" + (lgDvd * 50) +
+                    " </td></tr>"
+                htmlString += "</table></body></html>";
+                var newWindow = window.open("", "Preview", "width=500px,height=500px");
+                newWindow.document.write(htmlString);
+                //newWindow.moveTo(100, 100);
+                //newWindow.close();
+            }
+        }
+    </script>
+</head>
+
+<body bgcolor='cyan'>
+    <h1>PRODUCTS</h1>
+    <form id="products" name="form1" method='GET'>
+        <table border='1'>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Qty</th>
+            </tr>
+            <tr>
+                <td>Barbie Doll</td>
+                <td>Beautiful</td>
+                <td>20</td>
+                <td><input type="text" id="1"> </td>
+            </tr>
+            <tr>
+                <td>Calculator</td>
+                <td>Calculator with latest features</td>
+                <td>30</td>
+                <td><input type="text" id="2"></td>
+            </tr>
+            <tr>
+                <td>Mobile Phone</td>
+                <td>Camera, Java, Games, GPRS</td>
+                <td>40</td>
+                <td><input type="text" id="3"></td>
+            </tr>
+            <tr>
+                <td>LG DVD</td>
+                <td>5 disc changer</td>
+                <td>50</td>
+                <td><input type="text" id="4"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Order" onclick="placeOrder()">
+    </form>
+</body>
+
+</html>
